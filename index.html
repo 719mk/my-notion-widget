@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            /* Notionのデフォルト背景に馴染む色 */
+            background-color: #f1f1f1; 
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+        .main-text {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 500;
+            margin-bottom: 8px;
+            white-space: pre-wrap;
+        }
+        .sub-text {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="display-content" class="main-text">読み込み中...</div>
+        <div id="display-description" class="sub-text"></div>
+    </div>
+
+    <script>
+        const myData = [
+            { 
+                content: `「機捜っていいな。誰かが最悪の事態になる前に止められるんだよ。超いい仕事じゃん。」`, 
+                description: `「MIU404」第1話 - 伊吹藍` 
+            },
+            { 
+                content: `「死んだやつには勝てないって言ってたけど、それ違うよ。生きてりゃ何回でも勝つチャンスがある。」`, 
+                description: `「MIU404」第10話 - 伊吹藍。` 
+            },
+            { 
+                content: `-成川岳「嘘をついて、麦さんを呼び出しました。ドーナツEPを売りました。他にも…」
+                          -九重世人「全部聞く。」`, 
+                description: `「MIU404」第9話 - 九重世人` 
+            }
+        ];
+
+        const picked = myData[Math.floor(Math.random() * myData.length)];
+        
+        if (picked) {
+            document.getElementById('display-content').innerText = picked.content;
+            document.getElementById('display-description').innerText = picked.description;
+        }
+    </script>
+</body>
+</html>
